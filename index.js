@@ -12,10 +12,11 @@ function Phrase(content) {
   }
 
   this.letters = function letters() {
-    return (this.content.match(/[a-z]/ig) || []).join("");
+    const lettersRegEx = /[a-z]/gi;
+    return (this.content.match(lettersRegEx) || []).join("");
   }
 
   this.palindrome = function() {
-    return this.processedContent() === this.processedContent().reverse();
+    return this.processedContent() && this.processedContent() === this.processedContent().reverse();
   }
 }
